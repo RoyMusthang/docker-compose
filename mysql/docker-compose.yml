@@ -1,19 +1,11 @@
 version: '3'
 services:
   db:
-    image: mysql:5
+    image: mysql:5.7
     volumes:
       - ./db_data:/var/lib/mysql
     restart: always
-    command: mysql -u mysql -p mysql < /var/lib/mysql/northwind.sql
     ports:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
-      MYSQL_DATABASE: northwind
-    networks:
-      - umbrella
-networks:
-  umbrella:

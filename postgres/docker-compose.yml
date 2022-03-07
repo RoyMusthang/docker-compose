@@ -1,0 +1,12 @@
+version: '2'
+services:
+  dbpostgres:
+    image: postgres
+    volumes:
+      - /db_data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pguser
+      POSTGRES_DB: pgdb0
